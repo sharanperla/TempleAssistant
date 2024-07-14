@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fe9400;
+}
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+:root {
+    --bg-image: url(https://wallpaperaccess.com/full/1152510.jpg);
+}
+
+nav {
+    background-color: #f2f2f2;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: sticky;
+    z-index: 9999;
+    top: 0;
+    box-shadow: 5px -1px 20px 5px rgb(0 0 0 / 20%);
+}
+
+nav div {
+    width: 70%;
+}
+
+nav div a img {
+    width: 120px;
+}
+
+nav ul {
+    width: 30%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li a img {
+    width: 30px;
+}
+
+.admin-login-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+    background-size: cover;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.292);
+}
+
+.login-form img {
+    width: 50px;
+}
+
+.login-form h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.login-form input[type="text"],
+.login-form input[type="number"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+    margin-left: 10px;
+    width: 45%;
+    padding: 15px;
+    border: none;
+    border-bottom: 3px solid black;
+    background-color: #1222ff00;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+}
+
+.login-form input[type="text"]:focus::placeholder,
+.login-form input[type="number"]:focus::placeholder,
+.login-form input[type="password"]:focus::placeholder,
+.login-form input[type="email"]:focus::placeholder {
+    opacity: 0;
+}
+
+.login-form input[type="submit"] {
+    display: block;
+    width: 30%;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: rgb(8, 115, 255);
+    color: #fff;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #1222ff;
+}
+
+.invalid-msg {
+    margin-top: 20px;
+    color: red;
+}
+
+.log-div {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.log-div a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.log-div a:hover {
+    color: rgb(116, 70, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.search-div form {
+    min-height: 40vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.5)), var(--bg-image);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    display: block;
+    width: 50vw;
+    padding: 15px;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-result-div {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-div {
+    margin: 3rem;
+    min-height: 90vh;
+}
+
+.search-card-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-title {
+    font-size: 1.52rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.search-form input[type="submit"] {
+    padding: 10px 30px;
+    background-color: rgb(255, 157, 10);
+    outline: none;
+    font-size: 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-card {
+    width:25;
+    margin: 2rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+   
+}
+
+.product-card:hover {
+    box-shadow: 5px -1px 20px 5px rgba(0, 0, 0, 0.096);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    margin: 0 0 1rem 0;
+}
+
+.product-card h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.product-card h2 {
+    color: #fda11c;
+    font-size: 2rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.btn-grp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-to-cart-btn {
+    padding: 10px 25px;
+    outline: none;
+    border: none;
+    background-color: #fda11c;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.add-to-cart-btn:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: #fe9400;
+}
+
+.view-dtls-btn {
+    padding: 12px 40px;
+    transition: 0.4s linear;
+    outline: none;
+    border: 2px solid #fe9400;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.view-dtls-btn:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: #fe9400;
+}
+
+footer {
+    min-height: 50vh;
+    background-color: #fe9400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 5px -1px 20px 5px rgb(0 0 0 / 20%);
+}
+
+footer div ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer div p {
+    width: 600px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+footer div img {
+    width: 200px;
+}
+
+footer div ul li a img {
+    width: 30px;
+}
+
+.product-details {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.product-img {
+    width: 50%;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    width: 400px;
+}
+
+.product-info {
+    width: 50%;
+}
+
+.product-info h1 {
+    font-size: 3rem;
+}
+
+.product-info h2 {
+    width: 80%;
+
+    margin: 10px 0;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.product-info h3 {
+    width: 80%;
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+
+.product-info .price {
+    margin: 1rem 0;
+    color: #fe9400;
+}
+
+.product-card .qty {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.empty-cart {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.empty-cart img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.empty-cart h1 {
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+
+.qty-field {
+    width: 115px;
+    padding: 8px 15px;
+    border: 3px solid #fda11c;
+    border-radius: 5px;
+}
+
+.div-head {
+    min-height: 30vh;
+    background-size: cover; 
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.5)), url(https://wallpaperaccess.com/full/1152510.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-head h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.place-order-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px 25px;
+    box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 20%);
+}
+
+.place-order-div div h1 {
+    font-size: 2rem;
+}
+
+.place-order-div div h1 span {
+    font-size: 1.5rem;
+}
+
+.user-info-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.user-info-div img {
+    width: 100px;
+    height: 100px;
+}
+
+.user-info-div h1 {
+    font-size: 2rem;
+}
+
+.user-info-div h2 {
+    font-size: 1rem;
+}
+
+.user-info-div h3 {
+    font-size: 0.5rem;
+}
+
+.bill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.bill-div {
+    min-height: 100vh;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bill-div h1 {
+    font-size: 2rem;
+}
+
+.bill-div table {
+    margin: 30px 0;
+}
+
+.bill-div table tr th {
+    font-size: 1.2rem;
+    padding: 10px 55px;
+}
+
+.bill-div table tr td {
+    font-size: 1rem;
+    padding: 10px 55px;
+    text-align: center;
+}
+
+.bill-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bill-info div {
+    text-align: center;
+    margin-top: 5px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-info div h1 {
+    font-size: 15px;
+}
+
+.alert {
+    width: 20%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 20%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    position: absolute;
+}
+
+.alert img {
+    width: 10%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 20%);
+}
+
+.alert h1 {
+    font-size: 1rem;
+}
+
+.review-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.comment .content {
+    font-size: 16px;
+}
+.reset-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #28ddb0;
+    background-image: linear-gradient(315deg, #161313 0%, #f30000 74%);
+}

@@ -1,0 +1,17 @@
+th {
+    font-family: "Poppins";
+    padding: 15px 0;
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+
+tr td {
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 500;
+}
+
+tr:nth-of-type(even) {
+    background-color: #ffbd86;
+}

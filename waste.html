@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Volunteer Participation Update</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <style>
+    table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  background-color: lightgray;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+  </style>
+  <body>
+    <h1>Volunteer Participation Update</h1>
+    <?php
+    echo"<form method=POST>
+
+      <label for=activity>Select Activity:</label>
+      <select name=activity id=activity>";
+       
+           $conn=new mysqli("localhost","root","","tadb");
+           if(mysqli_Connect_error()){
+               die("connection failed:");
+           }
+     // Query the database for activities
+          $sql = "SELECT * FROM volunteer";
+          $result = mysqli_query($conn, $sql);
+          
+          // Loop through the results and display each activity as an option in the dropdown menu
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="'.$row['v_id'].'">'.$row['v_title'].'('.$row['v_date'].')</option>';
+          }
+          echo"<input type=submit name=dateselect value=select>";
+          echo"</form>";
+          ?>
+
+
+         <form method="post">
+
+      </select>
+             <table>
+        <thead>
+          <tr>
+            <th>Volunteer ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Participation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if(isset($_POST['dateselect'])){
+            $vid=$_POST['activity'];
+            $sqlq = "UPDATE registeredvolunteers SET status ='true' where v_id=$vid";
+            $resultq = mysqli_query($conn, $sqlq);
+            // Query the database for registered volunteers
+            $sql = "SELECT * FROM registeredvolunteers where v_id=$vid";
+            $result = mysqli_query($conn, $sql);
+            
+            // Loop through the results and display each volunteer's information
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr>';
+              echo '<td>'.$row['u_id'].'</td>';
+              echo '<td>'.$row['uname'].'</td>';
+              echo '<td>'.$row['email'].'</td>';
+              echo '<td><input type="checkbox" name="participation[]" value="'.$row['u_id'].'"></td>';
+              
+              echo '</tr>';
+            }
+          
+        echo"</tbody>
+      </table>";
+  echo"<input type=submit name=dateselect1 value=select></form>";
+
+    ?>
+    <?php
+
+  if(isset($_POST['participation'])){
+  // Get the list of volunteer IDs from the form
+  $participation = $_POST['participation'];
+  echo "$participation";
+  
+  // Update the participation status of each volunteer
+  foreach ($participation as $uid) {
+    $sql = "UPDATE registeredvolunteers SET part ='true' WHERE u_id=$participation";
+    $result = $conn->query($sql);
+  }
+ 
+    if($result){
+        echo "<script>alert(' updated succesfuly.')</script>";
+        echo "<script>window.location.href='../../admindashboard.php'</script>";
+    }
+    else{
+        echo "<script>alert(' failed to updated!.')</script>";
+        echo "<script>window.location.href='volunteerpart.php'</script>";
+    }
+  
+}
+          }
+?>
+
+  </body>
+</html>
+
+
